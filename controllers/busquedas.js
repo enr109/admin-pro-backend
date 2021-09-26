@@ -15,7 +15,7 @@ const getTodo = async(req, res = response ) => {
     const hospital = await Hospital.find({nombre: regex});
     const medicos = await Medicos.find({nombre: regex}); */
 
-    const [ usuario, medicos, hospital ] = await Promise.all([
+    const [ usuario, hospital ,medicos ] = await Promise.all([
         Usuario.find({nombre: regex}),
         Hospital.find({nombre: regex}),
         Medicos.find({nombre: regex}),
